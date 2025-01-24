@@ -10,8 +10,6 @@ public class GameManager : MonoBehaviour
     
     void Start()
     {
-        Debug.Log("GameManger");
         var spawnedPlayer = Instantiate(player, spawnPosition.position, Quaternion.identity);
-        spawnedPlayer.transform.parent = parent;
     }
 }
