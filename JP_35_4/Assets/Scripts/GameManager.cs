@@ -10,6 +10,16 @@ public class GameManager : MonoBehaviour
     
     void Start()
     {
-        var spawnedPlayer = Instantiate(player, spawnPosition.position, Quaternion.identity);
+        
+    }
+
+    public void StartGame()
+    {
+        CreatePlayer();
+    }
+
+    private void CreatePlayer()
+    {
+        Instantiate(player, spawnPosition.position, Quaternion.identity);
     }
 }
