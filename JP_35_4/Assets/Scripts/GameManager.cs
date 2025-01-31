@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     public GameObject player;
     public Transform spawnPosition;
     public Transform parent;
+    public Transform spawnPoint;
     
     void Start()
     {
@@ -20,6 +21,7 @@ public class GameManager : MonoBehaviour
 
     private void CreatePlayer()
     {
-        Instantiate(player, spawnPosition.position, Quaternion.identity);
+        var playerClone = Instantiate(player, spawnPosition.position, Quaternion.identity);
+        playerClone.GetComponent<Death>().SpawnPosition = spawnPoint;
     }
 }

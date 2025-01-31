@@ -12,6 +12,8 @@ public class UIManager : MonoBehaviour
     public GameManager gameManager;
     public Slider soundSlider;
     public TMP_Dropdown dropdown;
+    public GameObject myImage;
+    public Transform imageParent;
 
     private int count = 0;
 
@@ -70,5 +72,12 @@ public class UIManager : MonoBehaviour
     public void OnDropDownChanged(int value)
     {
         Debug.Log(value);
+    }
+
+    public void CreateImage()
+    {
+        var color = new Color(Random.Range(0, 1f), Random.Range(0, 1f), Random.Range(0, 1f));
+        var imageClone = Instantiate(myImage, imageParent);
+        imageClone.GetComponent<Image>().color = color;
     }
 }
