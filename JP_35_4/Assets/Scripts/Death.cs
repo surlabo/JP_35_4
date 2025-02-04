@@ -12,4 +12,7 @@ public class Death : MonoBehaviour
             transform.position = SpawnPosition.position;
         }
     }
+
+    
+
 }

@@ -14,6 +14,9 @@ public class UIManager : MonoBehaviour
     public TMP_Dropdown dropdown;
     public GameObject myImage;
     public Transform imageParent;
+    public Button startButton;
+    public Toggle myToggle;
+    public Slider mySlider;
 
     private int count = 0;
 
@@ -27,7 +30,15 @@ public class UIManager : MonoBehaviour
         optionsList.Add(option);
         optionsList.Add(option2);
         dropdown.AddOptions(optionsList);
+        startButton.onClick.AddListener(OnStartButtonClick);
+        //myToggle.onValueChanged.AddListener(OnToggle);
+        //mySlider.onValueChanged.AddListener(OnSlider);
         //StartCoroutine(Counter());
+    }
+
+    private void OnSlider(float value)
+    {
+        
     }
 
     //IEnumerator Counter()
@@ -42,8 +53,16 @@ public class UIManager : MonoBehaviour
 
     public void OnCounterButtonClick()
     {
+        
         count++;
         point.text = count.ToString();
+
+        PlayerPrefs.SetInt("ID", count);
+    }
+
+    public void OnToggle(bool value)
+    {
+        var x = PlayerPrefs.GetInt("ID");
     }
 
     public void OnStartButtonClick()
