@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Death : MonoBehaviour
 {
-    public Transform SpawnPosition;
+    public GameManager gameManager;
     void Update()
     {
         if (transform.position.y < -10)
         {
-            transform.position = SpawnPosition.position;
+            gameManager.RespawnPlayer();
         }
     }
 

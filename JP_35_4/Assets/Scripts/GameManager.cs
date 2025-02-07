@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,44 +8,87 @@ public class GameManager : MonoBehaviour
     public GameObject player;
     public Transform spawnPosition;
     public Transform parent;
-    public Transform spawnPoint;
+    public Transform startSpawnPoint;
     public List<Transform> spawnPoints;
-        GameObject playerClone;
+    private GameObject playerClone;
 
 
     void Start()
     {
+        //StartGame();
+
+        int x = 0;
+        var car = new Car();
+        car.y = 0;
         
+        ChangeCar(car);
+        Debug.Log(x);
+        Debug.Log(car.y);
+    }
+
+
+    private bool Count(out int x)
+    {
+        x = 10;
+        x+=1;
+        return x == 1;
+    }
+
+    public void ChangeCar(Car car)
+    {
+        car.y += 1;
     }
 
     public void StartGame()
     {
-        CreatePlayer();
+        SpawnPlayer();
     }
 
-    private void CreatePlayer()
+    private void SpawnPlayer()
     {
-        Debug.Log(PlayerPrefs.HasKey("LevelId"));
         if (PlayerPrefs.HasKey("LevelId"))
         {
             var platformId = PlayerPrefs.GetInt("LevelId");
-            Debug.Log(platformId);
-            var newSpawnPoint = spawnPoints[platformId];
-            playerClone = Instantiate(player, newSpawnPoint.position, Quaternion.identity);
+
+            playerClone = CreatePlayer(spawnPoints[platformId].position);
         }
         else
         {
-            playerClone = Instantiate(player, spawnPosition.position, Quaternion.identity);
-            
+            playerClone = CreatePlayer(startSpawnPoint.position);
+
         }
-        playerClone.GetComponent<Death>().SpawnPosition = spawnPoint;
 
-
-
+        playerClone.GetComponent<Death>().gameManager = this;
 
     }
 
+    private GameObject CreatePlayer(Vector3 spawnPosition)
+    {
+        return Instantiate(player, spawnPosition, Quaternion.identity);
+    }
     
+    public void RespawnPlayer()
+    {
+        if (PlayerPrefs.HasKey("LevelId"))
+        {
+            var platformId = PlayerPrefs.GetInt("LevelId");
 
+            playerClone.transform.position = spawnPoints[platformId].position;
+        }
+        else
+        {
+            playerClone.transform.position = startSpawnPoint.position;
+        }
+    }
+}
+
+
+public class Car
+{
+    public int y;
+}
+
+public struct Home
+{
 
 }

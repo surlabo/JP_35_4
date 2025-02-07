@@ -93,6 +93,7 @@ GameObject:
   - component: {fileID: 8884120465547602304}
   - component: {fileID: 8357275328145413068}
   - component: {fileID: 8519031458553165975}
+  - component: {fileID: 8082707970996165793}
   m_Layer: 0
   m_Name: PlayerCamera
   m_TagString: MainCamera
@@ -175,6 +176,18 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3878027727705154224}
   m_Enabled: 1
+--- !u!114 &8082707970996165793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3878027727705154224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c7ee6b480ebddb4b8d755847c6fdc2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3900581601532352879
 GameObject:
   m_ObjectHideFlags: 0
@@ -266,6 +279,7 @@ GameObject:
   - component: {fileID: 246719118391448336}
   - component: {fileID: 4371030790918253180}
   - component: {fileID: 8270495262052027887}
+  - component: {fileID: 4948325692547058685}
   m_Layer: 0
   m_Name: FirstPersonController
   m_TagString: Player
@@ -433,7 +447,7 @@ MonoBehaviour:
   sprintBar: {fileID: 677751153507254443}
   sprintBarWidthPercent: 0.3
   sprintBarHeightPercent: 0.02
-  enableJump: 1
+  enableJump: 0
   jumpKey: 32
   jumpPower: 5
   enableCrouch: 1
@@ -457,7 +471,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f04e0f0172f5bed43ba2fb664981fe87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpawnPosition: {fileID: 0}
+  gameManager: {fileID: 0}
 --- !u!114 &8270495262052027887
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -468,6 +482,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2e539c2833faa71409493e5a53bba01f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4948325692547058685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5750295867329340850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2513d3194f0d904d95d56523113c8c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7398744111872151995

@@ -2120,7 +2120,7 @@ MonoBehaviour:
   player: {fileID: 5750295867329340850, guid: e1af6cf51c332974c910c2e255d4c74a, type: 3}
   spawnPosition: {fileID: 501210424}
   parent: {fileID: 1181180872}
-  spawnPoint: {fileID: 501210424}
+  startSpawnPoint: {fileID: 0}
   spawnPoints:
   - {fileID: 542702258}
   - {fileID: 509935370}
