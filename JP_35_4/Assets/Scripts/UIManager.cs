@@ -17,6 +17,7 @@ public class UIManager : MonoBehaviour
     public Button startButton;
     public Toggle myToggle;
     public Slider mySlider;
+    public RaycastJump jump;
 
     private int count = 0;
 
