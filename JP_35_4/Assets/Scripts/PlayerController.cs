@@ -65,8 +65,11 @@ public class PlayerController : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         Debug.Log(collision.gameObject.name);
-        StopCoroutine(timerCoroutine);
-        
+        if (timerCoroutine != null)
+        {
+            StopCoroutine(timerCoroutine);
+        }
+
 
         if (collision.gameObject.name == "Floor")
         {
