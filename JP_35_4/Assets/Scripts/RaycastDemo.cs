@@ -9,14 +9,13 @@ public class RaycastDemo : MonoBehaviour
 
     private void Start()
     {
-        LayerMask = (1 << 7) | (1 << 3);
+        LayerMask = (1 << 3) | (1 << 4);
         
     }
     void Update()
     {
-        if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, 100, LayerMask))
+        if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, 200, LayerMask))
         {
-
             Debug.Log(hit.transform.name);
         }
         else

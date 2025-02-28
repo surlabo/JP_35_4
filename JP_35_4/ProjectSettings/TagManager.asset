@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Floor
   - SpawnPoint
+  - Platform
   layers:
   - Default
   - TransparentFX
